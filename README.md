@@ -8,10 +8,13 @@ When using CNN algorithms with input images, the proprocessing technique of resi
 - Cifar-10 dataset:
   - 60,000 colored images within 10 classes  
   - Each class contains 6,000 images
-  - 32 x 32 
+  - 32 x 32 <br>
+<img src="Images/Cifar10.png">
+
 - Natural Images: 
   - 6,899 colored images within 8 classes
   - No default image dimension
+<img src="Images/Natural Images.png">
 
 
 ## CNN Architecture
@@ -22,12 +25,15 @@ The 8-layer CNN architecture was used to compare the training and testing accura
 
 
 ## Experiment 2
-For dataset 2 (Natural Images), this was also used to compare the training and testing accuracies of varying image resizes. However, since this dataset is more complex due to images being various sizes, the size ranges were examined with a box plot.The box plots show that the mean and min values would be interesting sizes to explore. While the max value in the 500-600 ranges were too large for the computer to resize, instead the 3rd quartile values were chosen as the max value. The values also show that the height and width’s mean, max and min values are not the same. So in order to to resize the image as a square, both values were averaged before inputting into the CNN architecture. Min Resize = 46 x 46, Mean Resize = 217 x 217, Max Resize = 550 x 550. For each of the three models, each pixel was divided by 255 to get values between 0 and 1. Then each of the models were run for 10 epochs. Due to the large sizes, the run time would be quite long if the epoch value was any larger. The labels would be one hot encoded to represent numerical values instead of string text. Cat to 0, Car to 1, Fruit to 2, Dog to 3, Person to 4, Flower to 5, Motorbike to 6 and Airplane to 7. The training set is split into 5520 images and the testing set contains 1379 images.
+For dataset 2 (Natural Images), this was also used to compare the training and testing accuracies of varying image resizes. However, since this dataset is more complex due to images being various sizes, the size ranges were examined with a box plot. <br><br>
+<img src = "Images/Screen Shot 2021-04-04 at 2.21.11 PM.png" width="310" height = "250">
+<img src = "Images/Width.png" width="300">
+
+The box plots show that the mean and min values would be interesting sizes to explore. While the max value in the 500-600 ranges were too large for the computer to resize, instead the 3rd quartile values were chosen as the max value. The values also show that the height and width’s mean, max and min values are not the same. So in order to to resize the image as a square, both values were averaged before inputting into the CNN architecture. Min Resize = 46 x 46, Mean Resize = 217 x 217, Max Resize = 550 x 550. For each of the three models, each pixel was divided by 255 to get values between 0 and 1. Then each of the models were run for 10 epochs. Due to the large sizes, the run time would be quite long if the epoch value was any larger. The labels would be one hot encoded to represent numerical values instead of string text. Cat to 0, Car to 1, Fruit to 2, Dog to 3, Person to 4, Flower to 5, Motorbike to 6 and Airplane to 7. The training set is split into 5520 images and the testing set contains 1379 images.
 
 ## Results
-
-
-
+<img src="Images/Result Experiment 1.png" width = "500">
+<img src="Images/Result Experiment 2.png" width = "500">
 
 ## Discussion
 From the result tables, there is evidence that when resizing an image either smaller or larger, it affects the accuracy of the final testing run especially when examining Table 1. When training the models, the numbers show that the larger the image, the better the training accuracy and loss compared to the smaller images. But when testing, the models in Table 1 that are further away from the 32 x 32 default image, it tends to overfit and have a decreased accuracy and greater loss. In Table 2, the larger model testing accuracy is lower than the training accuracy which also shows signs of overfitting. As for runtime, the smaller the image, the faster the runtime. Even when running the 64 x 64 model in Table 1 or 550 x 550 model in Table 2, it takes over 75 minutes and 28 minutes respectively to complete training.
